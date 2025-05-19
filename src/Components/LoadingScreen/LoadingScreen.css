@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Michroma&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container2 {
+  background-color: black;
+  z-index: 9999;
+  color: #fff;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: opacity 1.5s ease;
+  /* animation: fade-out-bg 5s ease 10s forwards; */
+}
+
+.loading-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* background: linear-gradient(to right, #4f46e5, #3b82f6); */
+  background: linear-gradient(to right, #4e46e5a8, #3b83f677);
+  /* background: linear-gradient(to right, #2d3748, #2d2d2d); */
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  color: #191654;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+.fade-out .loading-page {
+  opacity: 0;
+  background-color: black;
+  pointer-events: none; /* Verhindert das Interagieren mit der Seite, wenn sie ausgeblendet ist */
+}
+
+#svg {
+  height: 150px;
+  width: 150px;
+  stroke: white;
+  fill-opacity: 0;
+  stroke-width: 3px;
+  stroke-dasharray: 3000;
+  animation: draw 6s ease;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 3000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.name-container {
+  height: 30px;
+  overflow: hidden;
+}
+
+.logo-name {
+  color: #fff;
+  font-size: 20px;
+  letter-spacing: 12px;
+  text-transform: uppercase;
+  margin-left: 20px;
+  font-weight: bolder;
+  animation: slide-up 1.5s ease 0s forwards;
+}
+
+.welcome-name {
+  color: #fff;
+  font-size: 20px;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  margin-left: 20px;
+  font-weight: bolder;
+  opacity: 0;
+  animation: slide-up 2s ease 3.5s forwards, slide-down 1.5s ease 7s forwards;
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+}
+
+@keyframes fade-out-bg {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden; /* Optional: Versteckt das Element nach der Animation */
+  }
+}

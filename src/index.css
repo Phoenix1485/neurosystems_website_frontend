@@ -1,0 +1,25 @@
+/* src/index.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Scrollbar für Dark Mode */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #121827; /* Tailwind slate-900 */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #353535af; /* Tailwind indigo-600 */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #46454e; /* Tailwind indigo-700 */
+}

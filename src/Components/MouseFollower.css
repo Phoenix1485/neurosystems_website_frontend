@@ -1,0 +1,46 @@
+/* src/components/MouseFollower.css */
+
+.mouse-follower {
+  position: fixed;
+  pointer-events: none;
+  z-index: 40; /* Niedriger z-index, damit es unter anderen Elementen bleibt */
+}
+
+.gradient-circle {
+  z-index: 40;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(to bottom right, #a217e2b7, #1d1df7);
+  background-size: 200% 200%; /* Größere Größe für den Hintergrund, um Animation zu ermöglichen */
+  animation: pulseOpacity 2s infinite alternate; /* 10s für den Farbverlauf, 2s für die Opacity-Animation */
+}
+
+/* @keyframes moveGradient {
+  0% {
+    background-position: 0% 0%; /* Startposition links oben
+  }
+  50% {
+    background-position: 100% 100%; /* Höchste Position rechts unten
+  }
+  100% {
+    background-position: 0% 0%; /* Zurück zur Startposition links oben 
+  }
+}
+  */
+
+@keyframes pulseOpacity {
+  0% {
+    opacity: 1; /* Vollständig sichtbar */
+  }
+  50% {
+    opacity: 0.6; /* Halbtransparent */
+  }
+  100% {
+    opacity: 1; /* Vollständig sichtbar */
+  }
+}

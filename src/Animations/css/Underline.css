@@ -1,0 +1,13 @@
+@keyframes underline {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+  
+  .animate-underline {
+    animation: underline 0.5s ease-out forwards;
+  }
+  

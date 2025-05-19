@@ -1,0 +1,13 @@
+@keyframes type-in-header {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.type-in-header {
+  opacity: 0;
+  animation: type-in-header 1s ease-out forwards;
+}
